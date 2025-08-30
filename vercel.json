@@ -4,84 +4,61 @@
   "buildCommand": "npm run build",
   "installCommand": "npm install",
   "outputDirectory": "dist/public",
-  "routes": [
+
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/vercel-handler.mjs",
-      "headers": {
-        "X-Frame-Options": "DENY",
-        "X-Content-Type-Options": "nosniff",
-        "X-XSS-Protection": "1; mode=block",
-        "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
-        "Referrer-Policy": "strict-origin-when-cross-origin"
-      }
+      "source": "/api/(.*)",
+      "destination": "/api/vercel-handler.mjs"
     },
     {
-      "src": "/(admin|dashboard|empire|health|finance|travel|security|saas)/(.*)",
-      "dest": "/index.html",
-      "headers": {
-        "Cache-Control": "s-maxage=0, max-age=0, must-revalidate"
-      }
+      "source": "/(admin|dashboard|empire|health|finance|travel|security|saas)/(.*)",
+      "destination": "/index.html"
     },
     {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html",
-      "headers": {
-        "Cache-Control": "s-maxage=86400, max-age=0",
-        "X-Frame-Options": "DENY",
-        "X-Content-Type-Options": "nosniff",
-        "X-XSS-Protection": "1; mode=block"
-      }
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
+
   "headers": [
     {
       "source": "/api/(.*)",
       "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST, PUT, DELETE, OPTIONS"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type, Authorization, X-Requested-With"
-        }
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization, X-Requested-With" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
       ]
     },
     {
       "source": "/(.*)",
       "headers": [
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        }
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Cache-Control", "value": "s-maxage=86400, max-age=0" }
       ]
     }
   ],
+
   "env": {
     "NODE_ENV": "production"
   },
+
   "functions": {
     "api/vercel-handler.mjs": {
       "maxDuration": 30,
       "memory": 1024
     }
   },
+
   "regions": ["iad1"],
+
   "crons": []
 }
