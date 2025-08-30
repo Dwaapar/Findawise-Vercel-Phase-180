@@ -1,0 +1,100 @@
+
+> rest-express@1.0.0 build
+> vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+
+vite v5.4.19 building for production...
+transforming...
+Browserslist: browsers data (caniuse-lite) is 10 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+/api/placeholder/1920/1080 referenced in /api/placeholder/1920/1080 didn't resolve at build time, it will remain unchanged to be resolved at runtime
+✓ 3772 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/public/index.html                     3.24 kB │ gzip:   1.21 kB
+../dist/public/assets/index-Bfe5i6wJ.css    164.71 kB │ gzip:  23.55 kB
+../dist/public/assets/index-CHnygYDk.js   2,354.30 kB │ gzip: 628.86 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 17.41s
+▲ [WARNING] Duplicate member "scheduleSync" in class body [duplicate-class-member]
+
+    server/services/content-feed/ContentFeedEngine.ts:369:16:
+      369 │   private async scheduleSync(source: ContentFeedSource): Promise<...
+          ╵                 ~~~~~~~~~~~~
+
+  The original member "scheduleSync" is here:
+
+    server/services/content-feed/ContentFeedEngine.ts:183:16:
+      183 │   private async scheduleSync(source: ContentFeedSource): Promise<...
+          ╵                 ~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "calculateNextSync" in class body [duplicate-class-member]
+
+    server/services/content-feed/ContentFeedEngine.ts:418:10:
+      418 │   private calculateNextSync(source: ContentFeedSource): Date {
+          ╵           ~~~~~~~~~~~~~~~~~
+
+  The original member "calculateNextSync" is here:
+
+    server/services/content-feed/ContentFeedEngine.ts:205:10:
+      205 │   private calculateNextSync(source: ContentFeedSource): Date {
+          ╵           ~~~~~~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "scheduleCleanup" in class body [duplicate-class-member]
+
+    server/services/content-feed/ContentFeedEngine.ts:424:10:
+      424 │   private scheduleCleanup(): void {
+          ╵           ~~~~~~~~~~~~~~~
+
+  The original member "scheduleCleanup" is here:
+
+    server/services/content-feed/ContentFeedEngine.ts:212:10:
+      212 │   private scheduleCleanup(): void {
+          ╵           ~~~~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "enrichContent" in class body [duplicate-class-member]
+
+    server/services/content-feed/ContentFeedEngine.ts:440:8:
+      440 │   async enrichContent(contentId: number): Promise<void> {
+          ╵         ~~~~~~~~~~~~~
+
+  The original member "enrichContent" is here:
+
+    server/services/content-feed/ContentFeedEngine.ts:276:8:
+      276 │   async enrichContent(contentId: number): Promise<void> {
+          ╵         ~~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "calculateQualityScore" in class body [duplicate-class-member]
+
+    server/services/content-feed/ContentFeedEngine.ts:483:10:
+      483 │   private calculateQualityScore(content: ContentFeed, enhancement...
+          ╵           ~~~~~~~~~~~~~~~~~~~~~
+
+  The original member "calculateQualityScore" is here:
+
+    server/services/content-feed/ContentFeedEngine.ts:347:10:
+      347 │   private calculateQualityScore(content: any): number {
+          ╵           ~~~~~~~~~~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "setupEventHandlers" in class body [duplicate-class-member]
+
+    server/services/content-feed/ContentFeedEngine.ts:529:10:
+      529 │   private setupEventHandlers(): void {
+          ╵           ~~~~~~~~~~~~~~~~~~
+
+  The original member "setupEventHandlers" is here:
+
+    server/services/content-feed/ContentFeedEngine.ts:227:10:
+      227 │   private setupEventHandlers(): void {
+          ╵           ~~~~~~~~~~~~~~~~~~
+
+6 of 39 warnings shown (disable the message limit with --log-limit=0)
+
+  dist/index.js  5.1mb ⚠️
+
+⚡ Done in 239ms

@@ -1,0 +1,100 @@
+
+> rest-express@1.0.0 build
+> vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+
+vite v5.4.19 building for production...
+transforming...
+Browserslist: browsers data (caniuse-lite) is 10 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+/api/placeholder/1920/1080 referenced in /api/placeholder/1920/1080 didn't resolve at build time, it will remain unchanged to be resolved at runtime
+✓ 3772 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/public/index.html                     3.24 kB │ gzip:   1.21 kB
+../dist/public/assets/index-Bfe5i6wJ.css    164.71 kB │ gzip:  23.55 kB
+../dist/public/assets/index-CHnygYDk.js   2,354.30 kB │ gzip: 628.86 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 29.08s
+▲ [WARNING] Duplicate member "recordPerformanceMetric" in class body [duplicate-class-member]
+
+    server/services/config/centralConfigEngine.ts:2192:16:
+      2192 │   private async recordPerformanceMetric(configId: string, metric...
+           ╵                 ~~~~~~~~~~~~~~~~~~~~~~~
+
+  The original member "recordPerformanceMetric" is here:
+
+    server/services/config/centralConfigEngine.ts:1731:16:
+      1731 │   private async recordPerformanceMetric(configId: string, metric...
+           ╵                 ~~~~~~~~~~~~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "triggerFederationSync" in class body [duplicate-class-member]
+
+    server/services/config/centralConfigEngine.ts:2244:8:
+      2244 │   async triggerFederationSync(configId: string, syncType: 'push'...
+           ╵         ~~~~~~~~~~~~~~~~~~~~~
+
+  The original member "triggerFederationSync" is here:
+
+    server/services/config/centralConfigEngine.ts:1756:16:
+      1756 │   private async triggerFederationSync(configId: string, syncType...
+           ╵                 ~~~~~~~~~~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "initializeAiMetadata" in class body [duplicate-class-member]
+
+    server/services/config/centralConfigEngine.ts:2334:16:
+      2334 │   private async initializeAiMetadata(configId: string, config: A...
+           ╵                 ~~~~~~~~~~~~~~~~~~~~
+
+  The original member "initializeAiMetadata" is here:
+
+    server/services/config/centralConfigEngine.ts:1593:16:
+      1593 │   private async initializeAiMetadata(configId: string, config: A...
+           ╵                 ~~~~~~~~~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "updateAiMetadata" in class body [duplicate-class-member]
+
+    server/services/config/centralConfigEngine.ts:2355:16:
+      2355 │   private async updateAiMetadata(configId: string, config: AiCon...
+           ╵                 ~~~~~~~~~~~~~~~~
+
+  The original member "updateAiMetadata" is here:
+
+    server/services/config/centralConfigEngine.ts:1610:16:
+      1610 │   private async updateAiMetadata(configId: string, config: AiCon...
+           ╵                 ~~~~~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "generateSchema" in class body [duplicate-class-member]
+
+    server/services/config/centralConfigEngine.ts:2393:10:
+      2393 │   private generateSchema(config: AnyConfig): any {
+           ╵           ~~~~~~~~~~~~~~
+
+  The original member "generateSchema" is here:
+
+    server/services/config/centralConfigEngine.ts:1467:10:
+      1467 │   private generateSchema(config: any): any {
+           ╵           ~~~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "getCrimeData" in class body [duplicate-class-member]
+
+    server/services/homeSecurity/securityEngine.ts:599:8:
+      599 │   async getCrimeData(zipCode: string): Promise<any> {
+          ╵         ~~~~~~~~~~~~
+
+  The original member "getCrimeData" is here:
+
+    server/services/homeSecurity/securityEngine.ts:222:8:
+      222 │   async getCrimeData(zipCode: string) {
+          ╵         ~~~~~~~~~~~~
+
+6 of 33 warnings shown (disable the message limit with --log-limit=0)
+
+  dist/index.js  5.1mb ⚠️
+
+⚡ Done in 1032ms

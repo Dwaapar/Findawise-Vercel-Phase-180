@@ -1,0 +1,100 @@
+
+> rest-express@1.0.0 build
+> vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
+
+vite v5.4.19 building for production...
+transforming...
+Browserslist: browsers data (caniuse-lite) is 10 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+/api/placeholder/1920/1080 referenced in /api/placeholder/1920/1080 didn't resolve at build time, it will remain unchanged to be resolved at runtime
+✓ 3772 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/public/index.html                     3.24 kB │ gzip:   1.21 kB
+../dist/public/assets/index-Bfe5i6wJ.css    164.71 kB │ gzip:  23.55 kB
+../dist/public/assets/index-CHnygYDk.js   2,354.30 kB │ gzip: 628.86 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 32.18s
+▲ [WARNING] Duplicate member "getNestedValue" in class body [duplicate-class-member]
+
+    server/services/config/centralConfigEngine.ts:2054:10:
+      2054 │   private getNestedValue(obj: any, path: string): any {
+           ╵           ~~~~~~~~~~~~~~
+
+  The original member "getNestedValue" is here:
+
+    server/services/config/centralConfigEngine.ts:1371:10:
+      1371 │   private getNestedValue(obj: any, path: string): any {
+           ╵           ~~~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "createSnapshot" in class body [duplicate-class-member]
+
+    server/services/config/centralConfigEngine.ts:2062:8:
+      2062 │   async createSnapshot(configId: string, config: AnyConfig, snap...
+           ╵         ~~~~~~~~~~~~~~
+
+  The original member "createSnapshot" is here:
+
+    server/services/config/centralConfigEngine.ts:1671:16:
+      1671 │   private async createSnapshot(configId: string, config: any, ty...
+           ╵                 ~~~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "logChange" in class body [duplicate-class-member]
+
+    server/services/config/centralConfigEngine.ts:2173:16:
+      2173 │   private async logChange(change: Partial<ConfigChangeHistory>):...
+           ╵                 ~~~~~~~~~
+
+  The original member "logChange" is here:
+
+    server/services/config/centralConfigEngine.ts:1691:16:
+      1691 │   private async logChange(changeData: any): Promise<void> {
+           ╵                 ~~~~~~~~~
+
+▲ [WARNING] Duplicate member "calculateDiff" in class body [duplicate-class-member]
+
+    server/services/config/centralConfigEngine.ts:2213:10:
+      2213 │   private calculateDiff(oldConfig: AnyConfig, newConfig: AnyConf...
+           ╵           ~~~~~~~~~~~~~
+
+  The original member "calculateDiff" is here:
+
+    server/services/config/centralConfigEngine.ts:1527:10:
+      1527 │   private calculateDiff(oldConfig: any, newConfig: any): any {
+           ╵           ~~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "checkPermissions" in class body [duplicate-class-member]
+
+    server/services/config/centralConfigEngine.ts:2257:16:
+      2257 │   private async checkPermissions(userId: string | undefined, con...
+           ╵                 ~~~~~~~~~~~~~~~~
+
+  The original member "checkPermissions" is here:
+
+    server/services/config/centralConfigEngine.ts:1632:16:
+      1632 │   private async checkPermissions(userId?: string, configId?: str...
+           ╵                 ~~~~~~~~~~~~~~~~
+
+▲ [WARNING] Duplicate member "sanitizeConfiguration" in class body [duplicate-class-member]
+
+    server/services/config/centralConfigEngine.ts:2310:16:
+      2310 │   private async sanitizeConfiguration(config: AnyConfig): Promis...
+           ╵                 ~~~~~~~~~~~~~~~~~~~~~
+
+  The original member "sanitizeConfiguration" is here:
+
+    server/services/config/centralConfigEngine.ts:1385:16:
+      1385 │   private async sanitizeConfiguration(config: any): Promise<any> {
+           ╵                 ~~~~~~~~~~~~~~~~~~~~~
+
+6 of 45 warnings shown (disable the message limit with --log-limit=0)
+
+  dist/index.js  5.1mb ⚠️
+
+⚡ Done in 751ms
